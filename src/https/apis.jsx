@@ -1,7 +1,6 @@
-const BASE_URL = "https://socialb-ackend.onrender.com";
+// const BASE_URL = "https://socialb-ackend.onrender.com";
+const BASE_URL = "http://localhost:3000";
 
-export const createPostApi = `${BASE_URL}/api/posts/createPost`;
+export const createPostApi = `${BASE_URL}/api/posts/`;
 
-export const getPostApi = `${BASE_URL}/api/posts/getPost`
-
-export const updatePostApi = `${BASE_URL}/api/posts/updatePost`;
+export const updatePostApi = `${BASE_URL}/api/posts/comments`;

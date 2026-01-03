@@ -1,12 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { apiRequest } from "../https/httpfunction";
-import { getPostApi } from "../https/apis";
+import { createPostApi} from "../https/apis";
 
 export const fetchPosts = createAsyncThunk(
   "getData/fetchPosts",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await apiRequest(getPostApi, "get", [], null, {});
+      const response = await apiRequest(createPostApi, "get", [], null, {});
       return response.data.posts;
     } catch (error) {
       return rejectWithValue(error.response?.data || error.message);
