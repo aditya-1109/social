@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Buttons from "../ui/buttons";
 import { createPostFunc } from "../../https/httpfunction";
+import { useDispatch } from "react-redux";
+import { fetchPosts } from "../../redux/getData";
 
 export default function CreatePost({onclose}) {
+
+  const dispatch = useDispatch()
   const [form, setForm] = useState({
     image: null,
     caption: "",
@@ -73,6 +77,7 @@ export default function CreatePost({onclose}) {
   if(response){
     alert("Post created Successfully");
     onclose()
+    dispatch(fetchPosts())
   }else{
     alert("Could not post")
   }
